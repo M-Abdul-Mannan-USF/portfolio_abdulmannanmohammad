@@ -1,146 +1,131 @@
-/* Elegant gothic font + readable modern one */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;700&display=swap');
-
-:root {
-  --bg-dark: #0d0d0f;     /* Near black */
-  --bg-panel: #1a1a1d;    /* Gothic stone-like dark gray */
-  --primary: #b31217;     /* Crimson red (Castlevania accent) */
-  --secondary: #d4af37;   /* Antique gold */
-  --text-light: #f5f5f5;  /* Readable text */
-  --text-muted: #aaa;     /* Subtext */
-  --shadow: rgba(0,0,0,0.6);
-}
-
+/* = Base font & resets */
 body {
   margin: 0;
+  padding: 0;
+  background: #0f0f13;
+  color: #e6e6e6;
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
   line-height: 1.6;
 }
 
-/* Header */
-header {
-  background: var(--bg-panel);
-  padding: 2rem 1rem;
-  text-align: center;
-  border-bottom: 2px solid var(--primary);
-  box-shadow: 0 4px 10px var(--shadow);
-}
-
-header h1 {
-  margin: 0;
-  font-family: 'Cinzel', serif;
-  font-size: 2.5rem;
-  color: var(--secondary);
-  letter-spacing: 2px;
-}
-
-header nav {
-  margin-top: 1rem;
-}
-
-header nav a {
-  color: var(--text-light);
-  margin: 0 1rem;
+a {
+  color: #c64556; /* accent deep red */
   text-decoration: none;
-  font-weight: 600;
   transition: color 0.3s ease;
 }
-
-header nav a:hover {
-  color: var(--primary);
+a:hover {
+  color: #f0717b;
 }
 
-/* Sections */
+/* = Header / Hero */
+header {
+  background: url('your-hero-bg.jpg') center center / cover no-repeat;
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+}
+header::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+header h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  color: #f5f5f5;
+  margin: 0;
+}
+header p {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #ddd;
+}
+
+/* = Sections */
 section {
-  max-width: 900px;
-  margin: 2rem auto;
+  max-width: 850px;
+  margin: 3rem auto;
   padding: 2rem;
-  background: var(--bg-panel);
+  background: #1a1a1d;
   border-radius: 8px;
-  border: 1px solid var(--secondary);
-  box-shadow: 0 2px 10px var(--shadow);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
 }
-
 section h2 {
   font-family: 'Cinzel', serif;
-  color: var(--secondary);
-  font-size: 1.8rem;
+  color: #c64556;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid #c64556;
   padding-bottom: 0.5rem;
 }
 
-/* Projects */
+/* = Projects */
 .project {
-  border: 1px solid var(--primary);
+  border: 1px solid #333;
   padding: 1rem;
-  margin-bottom: 1.5rem;
   border-radius: 6px;
-  background: #121214;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #121217;
+  margin-bottom: 1.5rem;
 }
-
 .project:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px var(--shadow);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.9);
 }
-
 .project h3 {
-  font-family: 'Cinzel', serif;
-  color: var(--primary);
-  margin: 0 0 0.5rem 0;
+  color: #f5b461; /* soft gold accent */
+  margin-top: 0;
+}
+.project p {
+  color: #ccc;
 }
 
-.project a {
-  color: var(--secondary);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.project a:hover {
-  text-decoration: underline;
-  color: var(--primary);
-}
-
-/* Skills */
+/* = Skills list */
 #skills ul {
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
 }
-
 #skills li {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.5rem 1rem;
+  background: #c64556;
+  color: #fafafa;
+  padding: 0.6rem 1.2rem;
   border-radius: 20px;
   font-weight: 500;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 6px var(--shadow);
+  transition: background 0.3s ease;
+}
+#skills li:hover {
+  background: #e35f71;
 }
 
-/* Contact */
+/* = Contact */
 #contact a {
-  color: var(--secondary);
-  text-decoration: none;
-  font-weight: 600;
+  color: #f5b461;
 }
-
 #contact a:hover {
-  color: var(--primary);
+  color: #ffd899;
 }
 
-/* Footer */
+/* = Footer */
 footer {
   text-align: center;
-  background: var(--bg-panel);
-  color: var(--text-muted);
+  background: #1a1a1d;
+  color: #777;
   padding: 1rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  border-top: 1px solid var(--primary);
+  border-top: 1px solid #c64556;
 }
+
+/* = Responsive tweaks */
+@media (max-width: 600px) {
+  header h1 { font-size: 2.2rem; }
+  section { padding: 1rem; margin: 2rem 1rem; }
+  .project { padding: 0.8rem; }
+}
+
