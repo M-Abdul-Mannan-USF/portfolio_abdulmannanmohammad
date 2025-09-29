@@ -8,6 +8,20 @@
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">MAM</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
   <header id="hero">
     <div class="hero-content">
@@ -33,23 +47,23 @@
     </p>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Featured Projects Section -->
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Featured Projects</h2>
     <div class="project-grid">
       <div class="project-card">
         <h3>Project 1</h3>
-        <p>A brief description of this project highlighting key technologies used.</p>
+        <p>A brief description highlighting key technologies used.</p>
         <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
       </div>
       <div class="project-card">
         <h3>Project 2</h3>
-        <p>A brief description of this project highlighting key technologies used.</p>
+        <p>A brief description highlighting key technologies used.</p>
         <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
       </div>
       <div class="project-card">
         <h3>Project 3</h3>
-        <p>A brief description of this project highlighting key technologies used.</p>
+        <p>A brief description highlighting key technologies used.</p>
         <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
       </div>
     </div>
@@ -83,6 +97,16 @@
   <footer>
     <p>© 2025 Mohammad Abdul Mannan</p>
   </footer>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 
 </body>
 </html>
